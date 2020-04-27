@@ -1,0 +1,17 @@
+variable "region"  {}
+variable "cidr"  {}
+variable "subnets"  {}
+variable "public_subnets"  {}
+variable "fw_ha_a_pri_name"  {}
+variable "fw_ha_a_sec_name"  {}
+variable "fw_ha_b_pri_name"  {}
+variable "fw_ha_b_sec_name"  {}
+variable "fw_key_name"  {}
+variable "mgmt_a_subnet"  {}
+variable "private_a_subnet"  {}
+variable "public_a_subnet"  {}
+variable "ha_a_subnet"  {}
+variable "public_b_subnet"  {}
+variable "mgmt_b_subnet"  {}
+variable "private_b_subnet"  {}
+variable "ha_b_subnet"  {}
