@@ -4,14 +4,14 @@ provider "aws" {
 
 
 module "vpc" {
-  source     = "git::https://gitlab.com/public-tf-modules/terraform-aws-vpc?ref=v0.1.0"
+  source     = "git::https://github.com/hodgiers/terraform-aws-vpc-module"
   cidr_block = var.cidr
   subnets = var.subnets 
   public_rts = var.public_subnets
 }
 
 module "firewall-a-pri" {
-  source = "git::https://gitlab.com/public-tf-modules/terraform-aws-panfw?ref=v0.0.1"
+  source = "git::https://github.com/hodgiers/terraform-aws-panfw-module"
   fw_name = var.fw_ha_a_pri_name 
   fw_key_name = var.fw_key_name
   subnet_id = module.vpc.subnets[var.mgmt_a_subnet].id 
@@ -36,7 +36,7 @@ module "firewall-a-pri" {
 }
 
 module "firewall-a-sec" {
-  source = "git::https://gitlab.com/public-tf-modules/terraform-aws-panfw?ref=v0.0.1"
+  source = "git::https://github.com/hodgiers/terraform-aws-panfw-module"
   fw_name = var.fw_ha_a_sec_name 
   fw_key_name = var.fw_key_name
   subnet_id = module.vpc.subnets[var.mgmt_a_subnet].id 
@@ -50,7 +50,7 @@ module "firewall-a-sec" {
 }
 
 module "firewall-b-pri" {
-  source = "git::https://gitlab.com/public-tf-modules/terraform-aws-panfw?ref=v0.0.1"
+  source = "git::https://github.com/hodgiers/terraform-aws-panfw-module"
   fw_name = var.fw_ha_b_pri_name 
   fw_key_name = var.fw_key_name
   subnet_id = module.vpc.subnets[var.mgmt_b_subnet].id 
@@ -75,7 +75,7 @@ module "firewall-b-pri" {
 }
 
 module "firewall-b-sec" {
-  source = "git::https://gitlab.com/public-tf-modules/terraform-aws-panfw?ref=v0.0.1"
+  source = "git::https://github.com/hodgiers/terraform-aws-panfw-module"
   fw_name = var.fw_ha_b_sec_name 
   fw_key_name = var.fw_key_name
   subnet_id = module.vpc.subnets[var.mgmt_b_subnet].id 
