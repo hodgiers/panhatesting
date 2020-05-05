@@ -11,4 +11,4 @@ priconfig
 
 # .tfvars files
 *.tfvars
-
+terraform.tfvars
